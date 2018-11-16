@@ -4,8 +4,13 @@ function Storage(){
 
 Storage.prototype.addFilmToStorage = function(newFilm){
 
-    let films ;
+    let films = this.getFilmsFromStorage() ;
+    films.push(newFilm) ;
 
+    localStorage.setItem("films",JSON.stringify(films));
+}
+Storage.prototype.getFilmsFromStorage = function(){
+    let films ;
     if(localStorage.getItem("films") === null){
         films = [] ;
     }
@@ -13,4 +18,5 @@ Storage.prototype.addFilmToStorage = function(newFilm){
         films = JSON.parse(localStorage.getItem("films"));
     }
 
+    return films;
 }
