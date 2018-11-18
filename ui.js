@@ -1,8 +1,6 @@
-function UI(){
-  
-}
+class UI{
 
-UI.prototype.addFilmToUI = function(newFilm){
+static addFilmToUI(newFilm){
 
   /*
     <tr>
@@ -23,12 +21,12 @@ UI.prototype.addFilmToUI = function(newFilm){
 </tr>`
 }
 
-UI.prototype.clearInputs = function(element1,element2,element3){
+static clearInputs(element1,element2,element3){
   element1.value = "" ;
   element2.value = "" ;
   element3.value = "" ;
 }
-UI.prototype.displayMessage = function(message,type){
+static displayMessage(message,type){
   const cardbody = document.querySelector('.card-body')
   // create alert div 
   const div = document.createElement("div")
@@ -44,7 +42,7 @@ UI.prototype.displayMessage = function(message,type){
 
 }
 
-UI.prototype.loadAllFilms = (films) =>{
+static loadAllFilms(films){
   const filmList = document.getElementById("films") ;
 
   films.forEach((film)=>{ 
@@ -57,11 +55,11 @@ UI.prototype.loadAllFilms = (films) =>{
     })
 }
 
-UI.prototype.deleteFilmFromUI = (target) =>{
+static deleteFilmFromUI(target){
   target.parentElement.parentElement.remove() ;  
 }
 
-UI.prototype.deleteAllFilmFromUI = function(){
+static deleteAllFilmFromUI(){
   const filmList = document.getElementById("films");
  // filmList.innerHTML = "" ; // first method but slow one.
 
@@ -70,4 +68,5 @@ UI.prototype.deleteAllFilmFromUI = function(){
   }
 
 
+}
 }
