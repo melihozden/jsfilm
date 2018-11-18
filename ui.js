@@ -56,3 +56,18 @@ UI.prototype.loadAllFilms = (films) =>{
   </tr>`
     })
 }
+
+UI.prototype.deleteFilmFromUI = (target) =>{
+  target.parentElement.parentElement.remove() ;  
+}
+
+UI.prototype.deleteAllFilmFromUI = function(){
+  const filmList = document.getElementById("films");
+ // filmList.innerHTML = "" ; // first method but slow one.
+
+  while(filmList.firstElementChild !== null){
+    filmList.firstElementChild.remove() ;
+  }
+
+
+}
